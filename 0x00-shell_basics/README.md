@@ -1,4 +1,7 @@
-#Shell Basics
-To continue go to see a several command of shell 
--pwd This command print the path of the current directory 
--ls This command list the contents of the current directoy
+hell Basics
+
+This is somethings commands of the Shell
+
+  - **pwd** (This command print the path of the current directory )
+  - **ls** (This command list the contents of the current directoy)
+  - **ls -l** (This Command show the contents of the current directory long format)
