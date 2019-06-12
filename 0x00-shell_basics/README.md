@@ -8,4 +8,5 @@ This is somethings commands of the Shell
   - **ls -al** (This command show all contents, including hidden files)
   - **ls -la** (This command display current directory for id numerically)
   - **mkdir /tmp/holberont** (This command create a directory named holberton in tmp)
-  - **mv /tmp/betty /tmp/holberton/
+  - **mv /tmp/betty /tmp/holberton/** (This command move betty to holberton)
+  - **rm /tmp/holberton/betty** (This command remove betty of holberton)
