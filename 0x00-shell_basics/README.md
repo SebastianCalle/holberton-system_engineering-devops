@@ -11,3 +11,4 @@ This is somethings commands of the Shell
   - **mv /tmp/betty /tmp/holberton/** (This command move betty to holberton)
   - **rm /tmp/holberton/betty** (This command remove betty of holberton)
   - **rm -rf /tmp/holberton** ( This commando remove the directory holberton)
+  - **popd** (This command back to the previous directory)
