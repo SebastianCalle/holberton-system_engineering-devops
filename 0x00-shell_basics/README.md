@@ -10,3 +10,4 @@ This is somethings commands of the Shell
   - **mkdir /tmp/holberont** (This command create a directory named holberton in tmp)
   - **mv /tmp/betty /tmp/holberton/** (This command move betty to holberton)
   - **rm /tmp/holberton/betty** (This command remove betty of holberton)
+  - **rm -rf /tmp/holberton** ( This commando remove the directory holberton)
