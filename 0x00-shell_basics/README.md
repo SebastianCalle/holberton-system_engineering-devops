@@ -12,3 +12,4 @@ This is somethings commands of the Shell
   - **rm /tmp/holberton/betty** (This command remove betty of holberton)
   - **rm -rf /tmp/holberton** ( This commando remove the directory holberton)
   - **cd -** (This command back to the previous directory)
+  - **ls -al . .. /boot** (This command show some directorys)
