@@ -7,3 +7,4 @@ This is somethings commands of the Shell
   - **ls -l** (This Command show the contents of the current directory long format)
   - **ls -al** (This command show all contents, including hidden files)
   - **ls -la** (This command display current directory for id numerically)
+  - **mkdir /tmp/holberont** (This command create a directory named holberton in tmp)
