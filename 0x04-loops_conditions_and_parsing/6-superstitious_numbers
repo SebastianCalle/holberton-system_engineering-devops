@@ -13,9 +13,7 @@ while [ $i -lt 21 ]; do
 		17)
 			echo "bad luck from Italy"
 			;;
-		*)
-			echo "$i"
-			;;
 	esac
+	echo "$i"
 	let i+=1
 done
