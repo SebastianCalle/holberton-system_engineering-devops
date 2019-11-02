@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script that display Holberton school and line 9 display HI
+
+i=0
+while [ $i -lt 10 ]; do
+	if [ $i = 9 ]; then
+		echo "Hi"
+	fi
+	echo "Holberton School"
+	let i+=1
+done
