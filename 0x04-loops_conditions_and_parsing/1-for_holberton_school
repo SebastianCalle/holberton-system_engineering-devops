@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Function that print 10 times Holberton School
+for ((i=0;i<10;i++)); do 
+    echo "Holberton School"; 
+done
