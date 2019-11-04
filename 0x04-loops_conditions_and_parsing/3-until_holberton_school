@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script that display holberton school 10 times whit until loop
 #!/bin/bash 
- CONTADOR=10
+ CONTADOR=9
  until [  $CONTADOR -lt 0 ]; do
 	 echo "Holberton School"
 	 let CONTADOR-=1
