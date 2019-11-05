@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script that display I am alive! in file /tmp/my_process
+
+while :
+do
+	sudo bash -c 'echo "I am alive!" >> /tmp/my_process'
+	sleep 2
+done
