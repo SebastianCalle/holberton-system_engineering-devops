@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-netstat -ap
+# display prots
+sudo netstat -pl
