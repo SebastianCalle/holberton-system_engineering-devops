@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-ssh ubuntu@34.73.226.110
+# conect to ssh using holberton key
+ssh -i ~/.ssh/holberton ubuntu@34.73.226.110
