@@ -8,10 +8,8 @@ sudo apt-get -y install nginx
 sudo /etc/init.d/nginx start
 # commando for overwrite index.html
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-# restart nginx
-sudo systemctl restart nginx
 # create new string to add
-string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=hQsZUVMwEls permanent;"
-sudo sed -i "s/server_name _;/$string/" /etc/nginx/sites-available/default
+command="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=hQsZUVMwEls permanent;"
+sudo sed -i "s/server_name _;/$command/" /etc/nginx/sites-available/default
 # restart nginx
-sudo systemctl restart nginx
+sudo service nginx restart
