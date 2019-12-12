@@ -9,6 +9,7 @@ sudo /etc/init.d/nginx start
 # commando for overwrite index.html
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 # create new string to add
-sudo sed '/server_name _;/a\t rewrite ^/redirect_me https://www.holbertonschool.com/ permanent' /etc/nginx/sites-available/default;
+string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=hQsZUVMwEls permanent;"
+sudo sed -i "s/server_name _;/$string/" /etc/nginx/sites-available/default
 # restart nginx
 sudo service nginx restart
