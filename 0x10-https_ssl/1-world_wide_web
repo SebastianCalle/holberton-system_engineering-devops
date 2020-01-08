@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-# Bash script that lists all the subdomains asociated one domain IP
-if [ "$#" -eq 1 ]
-then
-	dom="www lb-01 web-01 web-02"
-else
-	dom=$2
-fi
-for sub in $dom
-do
-	echo -n "The subdomain $sub "
-	dig "$sub.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{ print "is a " $4 " record and points to " $5}'
+# script that will display information about subdomains.
+print_info ()
+{
+	dig "$2.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$2"
+}
+
+declare -a subdomains=("www" "lb-01" "web-01" "web-02")
+
+for name in "${subdomains[@]}"; do
+	if [ "$2"  == "$name" ] || [ -z "$2" ]; then
+		print_info "$1" "$name"
+	fi
 done
