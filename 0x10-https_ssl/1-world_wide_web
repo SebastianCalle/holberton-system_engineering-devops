@@ -2,14 +2,15 @@
 # script that will display information about subdomains.
 print_info ()
 {
-	domain="$1"
-	subdomain="$2"
-	dig "$subdomain.$domain" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$subdomain"
+    if [ "$1" ] && [ "$2" ]
+    then
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' |grep -v 'ANSWER SECTION:' | awk -v var="$2" '{print "The subdomain " var " is a " $4 " record and points to " $5 }'
+    elif [ "$1" ]
+    then
+	for sub in www lb-01 web-01 web-02;do
+	    dig "$sub.$1" | grep -A1 'ANSWER SECTION:' |grep -v 'ANSWER SECTION:' | awk -v var="$sub" '{print "The subdomain " var " is a " $4 " record and points to " $5 }'
+	done
+    fi
 }
 
-for subdomain in "www" "lb-01" "web-01" "web-02"
-do
-	if [ -z "$2" ] || [ "$2" == "$subdomain" ] ; then
-		print_info "$1" "$subdomain"
-	fi
-done
+print_info "$1" "$2"
