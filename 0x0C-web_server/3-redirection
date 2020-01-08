@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# script that install nginx
+# command for update system
+sudo apt-get update
+# command for install nginx
+sudo apt-get -y install nginx
+# commando for start service nginx
+sudo /etc/init.d/nginx start
+# commando for overwrite index.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+# create new string to add
+string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=hQsZUVMwEls permanent;"
+sudo sed -i "s/server_name _;/$string/" /etc/nginx/sites-available/default
+# restart nginx
+sudo service nginx restart
