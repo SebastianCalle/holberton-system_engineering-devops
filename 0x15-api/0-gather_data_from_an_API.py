@@ -21,8 +21,8 @@ if __name__ == '__main__':
             if emp.get('completed') is True:
                 list_true_task.append(emp['title'])
 
-    print('Employee {} is done with tasks({}/{})'.format(employee_name,
+    print('Employee {} is done with tasks({}/{}):'.format(employee_name,
                                                          len(list_true_task),
                                                          total_task))
     for emp in list_true_task:
-        print('\t{}'.format(emp))
+        print('\t {}'.format(emp))
