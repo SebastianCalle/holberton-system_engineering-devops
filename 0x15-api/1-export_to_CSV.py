@@ -20,7 +20,8 @@ if __name__ == '__main__':
         if emp.get('userId') == int(employee_id):
             list_task.append(emp)
     with open('{}.csv'.format(employee_id), mode='w') as employee_file:
-        employee_writer = csv.writer(employee_file, delimiter=',')
+        employee_writer = csv.writer(employee_file, delimiter=',',
+                                     quoting=csv.QUOTE_ALL)
         for em in list_task:
             employee_writer.writerow([em['userId'], username, em['completed'],
                                       em['title']])
