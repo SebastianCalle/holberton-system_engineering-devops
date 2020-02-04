@@ -30,5 +30,5 @@ if __name__ == '__main__':
         dict_emp[str(i)] = list_users
         i += 1
 
-    with open('todo_all_employees.csv', mode='w') as employee_file:
+    with open('todo_all_employees.json', mode='w') as employee_file:
         json.dump(dict_emp, employee_file)
