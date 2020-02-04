@@ -22,12 +22,12 @@ if __name__ == '__main__':
         for emp in list_emp:
             if i == emp.get('userId'):
                 new_dict[emp['id']] = {
+                    "username": username,
                     "task": emp['title'],
                     "completed": emp['completed'],
-                    "username": username
                 }
                 list_users.append(new_dict.get(emp['id']))
-        dict_emp[i] = list_users
+        dict_emp[str(i)] = list_users
         i += 1
 
     with open('todo_all_employees.csv', mode='w') as employee_file:
