@@ -7,28 +7,25 @@ import requests
 import sys
 
 if __name__ == '__main__':
+    employee_id = sys.argv[1]
+    res = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id))
     res2 = requests.get(
-        'https://jsonplaceholder.typicode.com/todos')
+        'https://jsonplaceholder.typicode.com/todos'.format(employee_id))
+    username = res.json().get('username')
     list_emp = res2.json()
-    employee_id = 0
-    i = 1
-    dict_emp = {}
-    while (i <= 10):
-        res = requests.get(
-            'https://jsonplaceholder.typicode.com/users/{}'.format(i))
-        username = res.json().get('username')
-        list_users = []
-        new_dict = {}
-        for emp in list_emp:
-            if i == emp.get('userId'):
-                new_dict[emp['id']] = {
-                    "task": emp['title'],
-                    "completed": emp['completed'],
-                    "username": username
-                }
-                list_users.append(new_dict.get(emp['id']))
-        dict_emp[i] = list_users
-        i += 1
+    list_task = []
+    new_dict = {}
+    emp_dict = {}
+    for emp in list_emp:
+        if emp.get('userId') == int(employee_id):
+            new_dict[emp['id']] = {
+                "task": emp['title'],
+                "completed": emp['completed'],
+                "username": username,
+            }
+            list_task.append(new_dict[emp['id']])
+    emp_dict[str(employee_id)] = list_task
 
-    with open('todo_all_employes.csv', mode='w') as employee_file:
-        json.dump(dict_emp, employee_file)
+    with open("{}.json".format(employee_id), "w") as employ_f:
+        json.dump(emp_dict, employ_f)
