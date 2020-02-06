@@ -19,4 +19,4 @@ def top_ten(subreddit):
             print(list_post[i]['data']['title'])
             i += 1
     else:
-        return 0
+        return None
