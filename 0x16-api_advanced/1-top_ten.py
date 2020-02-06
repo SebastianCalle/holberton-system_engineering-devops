@@ -7,7 +7,7 @@ import requests
 
 def top_ten(subreddit):
     """
-    Return number of subscribers
+    Print top ten post
     """
     headers = {'User-agent': '/u/Api advance project'}
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
@@ -19,4 +19,4 @@ def top_ten(subreddit):
             print(list_post[i]['data']['title'])
             i += 1
     else:
-        return None
+        print(None)
